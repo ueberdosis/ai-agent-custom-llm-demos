@@ -2,37 +2,6 @@
 
 A comprehensive Next.js project showcasing how to integrate the Tiptap AI Agent extension with a custom backend and AI model provider. This repository contains **12 complete demos** demonstrating different integration patterns and capabilities. It follows the [Custom LLM Integration guides](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms) available in our docs.
 
-## 📂 Demo Categories
-
-This repository contains three categories of demos, each with implementations for all four supported adapters:
-
-### 1. **Basic Demos** (Getting Started)
-
-Simple implementations showing the fundamental integration patterns:
-
-- [Vercel AI SDK](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/vercel-ai-sdk)
-- [OpenAI Responses API](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/openai-responses)
-- [OpenAI Chat Completions API](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/openai-chat-completions)
-- [Anthropic Claude Messages API](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/anthropic-messages)
-
-### 2. **Client-Side Tools Demos**
-
-Demonstrations of [custom client-side tools](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/client-side-tools) that interact with the editor:
-
-- Vercel AI SDK + Replace Tool
-- OpenAI Responses API + Replace Tool
-- OpenAI Chat Completions API + Replace Tool
-- Anthropic Claude Messages API + Replace Tool
-
-### 3. **Server-Side Tools Demos**
-
-Examples of server-side tools that fetch external data:
-
-- [Vercel AI SDK + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/vercel-ai-sdk)
-- [OpenAI Responses API + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/openai-responses)
-- [OpenAI Chat Completions API + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/openai-chat-completions)
-- [Anthropic Claude Messages API + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/anthropic-messages)
-
 ## 🚀 Quick Start
 
 ### 1. Download the project
@@ -68,6 +37,37 @@ npm run dev
 ```
 
 Visit `http://localhost:3000` to see all available demos.
+
+## 📂 Demo Categories
+
+This repository contains three categories of demos, each with implementations for all four supported adapters:
+
+### 1. **Basic Demos** (Getting Started)
+
+Simple implementations showing the fundamental integration patterns:
+
+- [Vercel AI SDK](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/vercel-ai-sdk)
+- [OpenAI Responses API](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/openai-responses)
+- [OpenAI Chat Completions API](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/openai-chat-completions)
+- [Anthropic Claude Messages API](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/anthropic-messages)
+
+### 2. **Client-Side Tools Demos**
+
+Demonstrations of [custom client-side tools](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/client-side-tools) that interact with the editor:
+
+- Vercel AI SDK + Replace Tool
+- OpenAI Responses API + Replace Tool
+- OpenAI Chat Completions API + Replace Tool
+- Anthropic Claude Messages API + Replace Tool
+
+### 3. **Server-Side Tools Demos**
+
+Examples of server-side tools that fetch external data:
+
+- [Vercel AI SDK + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/vercel-ai-sdk)
+- [OpenAI Responses API + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/openai-responses)
+- [OpenAI Chat Completions API + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/openai-chat-completions)
+- [Anthropic Claude Messages API + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/anthropic-messages)
 
 ## 🏗️ Architecture Overview
 
