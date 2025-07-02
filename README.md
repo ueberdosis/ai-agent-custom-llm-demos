@@ -77,17 +77,23 @@ flowchart LR
 
 ## 🚀 Quick Start
 
-### 1. Configure your `.npmrc` file
+### 1. Download the project
 
-This project contains Tiptap Pro extensions that are published in Tiptap’s private npm registry. To install them, you need to configure your `.npmrc` file with the necessary authentication details. Follow the [private registry guide](https://tiptap.dev/docs/guides/pro-extensions) to set it up
+```bash
+npx degit https://github.com/ueberdosis/ai-agent-custom-llm-demos
+```
 
-### 2. Installation
+### 2. Authenticate to the Tiptap Private Registry
+
+This project contains Tiptap Pro extensions that are published in Tiptap’s private npm registry. To install them, you need to configure your `.npmrc` file with the necessary authentication details. Follow the [private registry guide](https://tiptap.dev/docs/guides/pro-extensions) to set it up.
+
+### 3. Installation
 
 ```bash
 npm install
 ```
 
-### 3. Environment Variables
+### 4. Environment Variables
 
 Create a `.env.local` file:
 
@@ -96,7 +102,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
 ```
 
-### 4. Run the Development Server
+### 5. Run the Development Server
 
 ```bash
 npm run dev
