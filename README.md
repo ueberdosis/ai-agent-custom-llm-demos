@@ -2,7 +2,7 @@
 
 A comprehensive Next.js project showcasing how to integrate the Tiptap AI Agent extension with a custom backend and AI model provider. This repository contains **12 complete demos** demonstrating different integration patterns and capabilities. It follows the [Custom LLM Integration guides](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms) available in our docs.
 
-## 🚀 Demo Categories
+## 📂 Demo Categories
 
 This repository contains three categories of demos, each with implementations for all four supported adapters:
 
