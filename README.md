@@ -99,6 +99,7 @@ Create a `.env.local` file:
 
 ```bash
 OPENAI_API_KEY=your_openai_api_key_here
+# Optional, only needed for Anthropic Claude Messages API
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
 ```
 
