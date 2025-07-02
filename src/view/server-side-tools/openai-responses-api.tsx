@@ -1,0 +1,18 @@
+"use client";
+
+import { AiAgentProvider } from "@tiptap-pro/extension-ai-agent";
+import { serverSideToolsOpenaiResponsesApiService } from "@/src/services/server-side-tools/openai-responses-api";
+import App from "@/src/view/server-side-tools/common";
+
+const provider = new AiAgentProvider({
+  resolver: async ({ chatMessages }) => {
+    const response = await serverSideToolsOpenaiResponsesApiService({
+      chatMessages,
+    });
+    return response;
+  },
+});
+
+export default function ServerSideToolsOpenaiResponsesApiView() {
+  return <App provider={provider} />;
+}
