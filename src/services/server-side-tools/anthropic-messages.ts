@@ -1,14 +1,13 @@
 "use server";
 
+import { systemPrompt } from "@/src/services/common/system-prompt";
+import Anthropic from "@anthropic-ai/sdk";
+import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
 import {
   AiAgentToolkit,
   anthropicMessagesAdapter,
-  ChatMessagesFormatter,
-  toolsStarterKit,
+  ChatMessagesFormatter
 } from "@tiptap-pro/extension-ai-agent-server";
-import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
-import Anthropic from "@anthropic-ai/sdk";
-import { systemPrompt } from "@/src/services/common/system-prompt";
 import { getWeather } from "./common/get-weather";
 import { locationSchema } from "./common/schemas";
 
@@ -39,7 +38,6 @@ export async function serverSideToolsAnthropicMessagesService(options: {
   // Create the AI Agent toolkit with Anthropic Messages adapter
   const toolkit = new AiAgentToolkit({
     adapter: anthropicMessagesAdapter,
-    tools: toolsStarterKit(),
   });
 
   // Create the chat messages formatter

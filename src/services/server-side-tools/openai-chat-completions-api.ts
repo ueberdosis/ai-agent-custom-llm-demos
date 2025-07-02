@@ -1,14 +1,13 @@
 "use server";
 
+import { systemPrompt } from "@/src/services/common/system-prompt";
+import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
 import {
   AiAgentToolkit,
-  openaiChatCompletionsAdapter,
   ChatMessagesFormatter,
-  toolsStarterKit,
+  openaiChatCompletionsAdapter
 } from "@tiptap-pro/extension-ai-agent-server";
-import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
 import OpenAI from "openai";
-import { systemPrompt } from "@/src/services/common/system-prompt";
 import { getWeather } from "./common/get-weather";
 import { locationSchema } from "./common/schemas";
 // Define the weather tool for OpenAI Chat Completions API format
@@ -40,7 +39,6 @@ export async function serverSideToolsOpenaiChatCompletionsApiService(options: {
   // Create the AI Agent toolkit with OpenAI Chat Completions adapter
   const toolkit = new AiAgentToolkit({
     adapter: openaiChatCompletionsAdapter,
-    tools: toolsStarterKit(),
   });
 
   // Create the chat messages formatter

@@ -1,16 +1,15 @@
 "use server";
 
+import { systemPrompt } from "@/src/services/common/system-prompt";
+import { openai } from "@ai-sdk/openai";
+import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
 import {
   AiAgentToolkit,
-  vercelAiSdkAdapter,
   ChatMessagesFormatter,
-  toolsStarterKit,
+  vercelAiSdkAdapter
 } from "@tiptap-pro/extension-ai-agent-server";
-import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
 import { generateText, tool } from "ai";
-import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
-import { systemPrompt } from "@/src/services/common/system-prompt";
 import { getWeather } from "./common/get-weather";
 
 // Define the weather tool in Vercel AI SDK format
@@ -31,7 +30,6 @@ export async function serverSideToolsVercelAiSdkService(options: {
   // Create the AI Agent toolkit with Vercel AI SDK adapter
   const toolkit = new AiAgentToolkit({
     adapter: vercelAiSdkAdapter,
-    tools: toolsStarterKit(),
   });
 
   // Create the chat messages formatter

@@ -1,14 +1,13 @@
 "use server";
 
+import { systemPrompt } from "@/src/services/common/system-prompt";
+import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
 import {
   AiAgentToolkit,
-  openaiResponsesAdapter,
   ChatMessagesFormatter,
-  toolsStarterKit,
+  openaiResponsesAdapter
 } from "@tiptap-pro/extension-ai-agent-server";
-import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
 import OpenAI from "openai";
-import { systemPrompt } from "@/src/services/common/system-prompt";
 import { getWeather } from "./common/get-weather";
 import { locationSchema } from "./common/schemas";
 // Define the weather tool for OpenAI Responses API format
@@ -39,7 +38,6 @@ export async function serverSideToolsOpenaiResponsesApiService(options: {
   // Create the AI Agent toolkit with OpenAI Responses adapter
   const toolkit = new AiAgentToolkit({
     adapter: openaiResponsesAdapter,
-    tools: toolsStarterKit(),
   });
 
   // Create the chat messages formatter
