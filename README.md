@@ -10,28 +10,28 @@ This repository contains three categories of demos, each with implementations fo
 
 Simple implementations showing the fundamental integration patterns:
 
-- ✅ OpenAI Responses API
-- ✅ OpenAI Chat Completions API
-- ✅ Vercel AI SDK
-- ✅ Anthropic Claude Messages API
+- [Vercel AI SDK](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/vercel-ai-sdk)
+- [OpenAI Responses API](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/openai-responses)
+- [OpenAI Chat Completions API](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/openai-chat-completions)
+- [Anthropic Claude Messages API](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/get-started/anthropic-messages)
 
 ### 2. **Client-Side Tools Demos**
 
-Demonstrations of custom client-side tools that interact with the editor:
+Demonstrations of [custom client-side tools](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/client-side-tools) that interact with the editor:
 
-- ✅ OpenAI Responses API + Replace Tool
-- ✅ OpenAI Chat Completions API + Replace Tool
-- ✅ Vercel AI SDK + Replace Tool
-- ✅ Anthropic Claude Messages API + Replace Tool
+- Vercel AI SDK + Replace Tool
+- OpenAI Responses API + Replace Tool
+- OpenAI Chat Completions API + Replace Tool
+- Anthropic Claude Messages API + Replace Tool
 
 ### 3. **Server-Side Tools Demos**
 
 Examples of server-side tools that fetch external data:
 
-- ✅ OpenAI Responses API + Weather Tool
-- ✅ OpenAI Chat Completions API + Weather Tool
-- ✅ Vercel AI SDK + Weather Tool
-- ✅ Anthropic Claude Messages API + Weather Tool
+- [Vercel AI SDK + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/vercel-ai-sdk)
+- [OpenAI Responses API + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/openai-responses)
+- [OpenAI Chat Completions API + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/openai-chat-completions)
+- [Anthropic Claude Messages API + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/anthropic-messages)
 
 ## 🏗️ Architecture Overview
 
@@ -39,14 +39,14 @@ Each demo follows a consistent three-layer architecture:
 
 ```mermaid
 flowchart LR
-    A["Frontend<br/>(React + Tiptap)"] --> B["Service Layer<br/>(Next.js Server Actions)"]
+    A["Frontend<br/>(React + Tiptap)"] --> B["Backend Services<br/>(Next.js Server Actions)"]
     B --> C["LLM Provider<br/>(OpenAI/Anthropic/etc.)"]
 ```
 
 ## 📁 Project Structure
 
 ```text
-├── app/                                    # Next.js App Router
+├── app/                                   # Next.js pages
 │   ├── basic/                             # Basic demos (getting started)
 │   │   ├── openai-responses-api/          # OpenAI Responses API demo
 │   │   ├── openai-chat-completions-api/   # OpenAI Chat Completions demo
@@ -57,22 +57,20 @@ flowchart LR
 │   │   ├── openai-chat-completions-api/   # With custom replace tool
 │   │   ├── vercel-ai-sdk/                 # With custom replace tool
 │   │   └── anthropic-messages/            # With custom replace tool
-│   ├── server-side-tools/                 # Server-side tools demos
-│   │   ├── openai-responses-api/          # With weather tool
-│   │   ├── openai-chat-completions-api/   # With weather tool
-│   │   ├── vercel-ai-sdk/                 # With weather tool
-│   │   └── anthropic-messages/            # With weather tool
-│   └── layout.tsx                         # Root layout
-├── src/
-│   ├── services/                          # Next.js Server Actions
-│   │   ├── basic/                         # Basic demo services
-│   │   ├── client-side-tools/             # Client-side tools services
-│   │   └── server-side-tools/             # Server-side tools services
-│   └── view/                              # React components
-│       ├── basic/common/                  # Basic demo UI
-│       ├── client-side-tools/common/      # Client-side tools UI
-│       └── server-side-tools/common/      # Server-side tools UI
-└── package.json
+│   └── server-side-tools/                 # Server-side tools demos
+│       ├── openai-responses-api/          # With weather tool
+│       ├── openai-chat-completions-api/   # With weather tool
+│       ├── vercel-ai-sdk/                 # With weather tool
+│       └── anthropic-messages/            # With weather tool
+└── src/
+    ├── services/                          # Next.js Server Actions
+    │   ├── basic/                         # Basic demo services
+    │   ├── client-side-tools/             # Client-side tools services
+    │   └── server-side-tools/             # Server-side tools services
+    └── view/                              # React components
+        ├── basic/common/                  # Basic demo UI
+        ├── client-side-tools/common/      # Client-side tools UI
+        └── server-side-tools/common/      # Server-side tools UI
 ```
 
 ## 🚀 Quick Start
