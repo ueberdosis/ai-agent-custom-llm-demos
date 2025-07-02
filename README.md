@@ -33,6 +33,42 @@ Examples of server-side tools that fetch external data:
 - [OpenAI Chat Completions API + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/openai-chat-completions)
 - [Anthropic Claude Messages API + Weather Tool](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/server-side-tools/anthropic-messages)
 
+## 🚀 Quick Start
+
+### 1. Download the project
+
+```bash
+npx degit https://github.com/ueberdosis/ai-agent-custom-llm-demos
+```
+
+### 2. Authenticate to the Tiptap Private Registry
+
+This project contains Tiptap Pro extensions that are published in Tiptap’s private npm registry. To install them, you need to configure your `.npmrc` file with the necessary authentication details. Follow the [private registry guide](https://tiptap.dev/docs/guides/pro-extensions) to set it up.
+
+### 3. Installation
+
+```bash
+npm install
+```
+
+### 4. Environment Variables
+
+Create a `.env.local` file:
+
+```bash
+OPENAI_API_KEY=your_openai_api_key_here
+# Optional, only needed for Anthropic Claude Messages API
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+```
+
+### 5. Run the Development Server
+
+```bash
+npm run dev
+```
+
+Visit `http://localhost:3000` to see all available demos.
+
 ## 🏗️ Architecture Overview
 
 Each demo follows a consistent three-layer architecture:
@@ -72,42 +108,6 @@ flowchart LR
         ├── client-side-tools/common/      # Client-side tools UI
         └── server-side-tools/common/      # Server-side tools UI
 ```
-
-## 🚀 Quick Start
-
-### 1. Download the project
-
-```bash
-npx degit https://github.com/ueberdosis/ai-agent-custom-llm-demos
-```
-
-### 2. Authenticate to the Tiptap Private Registry
-
-This project contains Tiptap Pro extensions that are published in Tiptap’s private npm registry. To install them, you need to configure your `.npmrc` file with the necessary authentication details. Follow the [private registry guide](https://tiptap.dev/docs/guides/pro-extensions) to set it up.
-
-### 3. Installation
-
-```bash
-npm install
-```
-
-### 4. Environment Variables
-
-Create a `.env.local` file:
-
-```bash
-OPENAI_API_KEY=your_openai_api_key_here
-# Optional, only needed for Anthropic Claude Messages API
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
-```
-
-### 5. Run the Development Server
-
-```bash
-npm run dev
-```
-
-Visit `http://localhost:3000` to see all available demos.
 
 ## 📖 Demo Details
 
