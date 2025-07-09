@@ -9,9 +9,10 @@ import App from "@/src/view/client-side-tools/common";
 import { replaceAllToolHandler } from "@/src/view/client-side-tools/common/replace-all-tool-handler.js";
 
 const provider = new AiAgentProvider({
-  resolver: async ({ chatMessages }) => {
+  resolver: async ({ chatMessages, schemaAwarenessData }) => {
     const response = await clientSideToolsAnthropicMessagesService({
       chatMessages,
+      schemaAwarenessData,
     });
     return response;
   },

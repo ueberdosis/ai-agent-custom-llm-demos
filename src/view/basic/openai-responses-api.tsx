@@ -5,8 +5,11 @@ import { basicOpenaiResponsesApiService } from "@/src/services/basic/openai-resp
 import App from "@/src/view/basic/common";
 
 const provider = new AiAgentProvider({
-  resolver: async ({ chatMessages }) => {
-    const response = await basicOpenaiResponsesApiService({ chatMessages });
+  resolver: async ({ chatMessages, schemaAwarenessData }) => {
+    const response = await basicOpenaiResponsesApiService({
+      chatMessages,
+      schemaAwarenessData,
+    });
     return response;
   },
 });

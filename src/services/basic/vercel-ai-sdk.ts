@@ -5,17 +5,22 @@ import {
   vercelAiSdkAdapter,
   ChatMessagesFormatter,
 } from "@tiptap-pro/extension-ai-agent-server";
-import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
+import {
+  ChatMessage,
+  SchemaAwarenessData,
+} from "@tiptap-pro/extension-ai-agent";
 import { generateText } from "ai";
 import { openai } from "@ai-sdk/openai";
 import { systemPrompt } from "@/src/services/common/system-prompt";
 
 export async function basicVercelAiSdkService(options: {
   chatMessages: ChatMessage[];
+  schemaAwarenessData: SchemaAwarenessData;
 }) {
   // Create the AI Agent toolkit with Vercel AI SDK adapter
   const toolkit = new AiAgentToolkit({
     adapter: vercelAiSdkAdapter,
+    schemaAwarenessData: options.schemaAwarenessData,
   });
 
   // Create the chat messages formatter

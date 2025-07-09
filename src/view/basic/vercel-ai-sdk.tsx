@@ -5,8 +5,11 @@ import { basicVercelAiSdkService } from "@/src/services/basic/vercel-ai-sdk";
 import App from "@/src/view/basic/common";
 
 const provider = new AiAgentProvider({
-  resolver: async ({ chatMessages }) => {
-    const response = await basicVercelAiSdkService({ chatMessages });
+  resolver: async ({ chatMessages, schemaAwarenessData }) => {
+    const response = await basicVercelAiSdkService({
+      chatMessages,
+      schemaAwarenessData,
+    });
     return response;
   },
 });

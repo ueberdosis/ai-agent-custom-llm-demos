@@ -5,9 +5,10 @@ import { serverSideToolsOpenaiResponsesApiService } from "@/src/services/server-
 import App from "@/src/view/server-side-tools/common";
 
 const provider = new AiAgentProvider({
-  resolver: async ({ chatMessages }) => {
+  resolver: async ({ chatMessages, schemaAwarenessData }) => {
     const response = await serverSideToolsOpenaiResponsesApiService({
       chatMessages,
+      schemaAwarenessData
     });
     return response;
   },

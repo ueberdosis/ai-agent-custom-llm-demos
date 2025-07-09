@@ -5,9 +5,10 @@ import { basicOpenaiChatCompletionsApiService } from "@/src/services/basic/opena
 import App from "@/src/view/basic/common";
 
 const provider = new AiAgentProvider({
-  resolver: async ({ chatMessages }) => {
+  resolver: async ({ chatMessages, schemaAwarenessData }) => {
     const response = await basicOpenaiChatCompletionsApiService({
       chatMessages,
+      schemaAwarenessData,
     });
     return response;
   },

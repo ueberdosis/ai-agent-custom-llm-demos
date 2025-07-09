@@ -1,11 +1,14 @@
 "use server";
 
 import { systemPrompt } from "@/src/services/common/system-prompt";
-import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
+import {
+  ChatMessage,
+  SchemaAwarenessData,
+} from "@tiptap-pro/extension-ai-agent";
 import {
   AiAgentToolkit,
   ChatMessagesFormatter,
-  openaiResponsesAdapter
+  openaiResponsesAdapter,
 } from "@tiptap-pro/extension-ai-agent-server";
 import OpenAI from "openai";
 import { getWeather } from "./common/get-weather";
@@ -34,10 +37,12 @@ const isGetWeatherMessage = (
 
 export async function serverSideToolsOpenaiResponsesApiService(options: {
   chatMessages: ChatMessage[];
+  schemaAwarenessData: SchemaAwarenessData;
 }) {
   // Create the AI Agent toolkit with OpenAI Responses adapter
   const toolkit = new AiAgentToolkit({
     adapter: openaiResponsesAdapter,
+    schemaAwarenessData: options.schemaAwarenessData,
   });
 
   // Create the chat messages formatter

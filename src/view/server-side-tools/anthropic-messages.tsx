@@ -5,9 +5,10 @@ import { serverSideToolsAnthropicMessagesService } from "@/src/services/server-s
 import App from "@/src/view/server-side-tools/common";
 
 const provider = new AiAgentProvider({
-  resolver: async ({ chatMessages }) => {
+  resolver: async ({ chatMessages, schemaAwarenessData }) => {
     const response = await serverSideToolsAnthropicMessagesService({
       chatMessages,
+      schemaAwarenessData,
     });
     return response;
   },

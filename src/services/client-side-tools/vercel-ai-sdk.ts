@@ -6,7 +6,10 @@ import {
   ChatMessagesFormatter,
   toolsStarterKit,
 } from "@tiptap-pro/extension-ai-agent-server";
-import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
+import {
+  ChatMessage,
+  SchemaAwarenessData,
+} from "@tiptap-pro/extension-ai-agent";
 import { generateText } from "ai";
 import { openai } from "@ai-sdk/openai";
 import { systemPrompt } from "@/src/services/common/system-prompt";
@@ -14,10 +17,12 @@ import { replaceAllTool } from "@/src/services/client-side-tools/common/replace-
 
 export async function clientSideToolsVercelAiSdkService(options: {
   chatMessages: ChatMessage[];
+  schemaAwarenessData: SchemaAwarenessData;
 }) {
   // Create the AI Agent toolkit with Vercel AI SDK adapter and custom tools
   const toolkit = new AiAgentToolkit({
     adapter: vercelAiSdkAdapter,
+    schemaAwarenessData: options.schemaAwarenessData,
     // Add a custom tool to the list of client-side tools
     tools: [...toolsStarterKit(), replaceAllTool()],
   });

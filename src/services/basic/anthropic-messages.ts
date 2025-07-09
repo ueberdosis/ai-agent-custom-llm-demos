@@ -5,16 +5,21 @@ import {
   anthropicMessagesAdapter,
   ChatMessagesFormatter,
 } from "@tiptap-pro/extension-ai-agent-server";
-import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
+import {
+  ChatMessage,
+  SchemaAwarenessData,
+} from "@tiptap-pro/extension-ai-agent";
 import Anthropic from "@anthropic-ai/sdk";
 import { systemPrompt } from "@/src/services/common/system-prompt";
 
 export async function basicAnthropicMessagesService(options: {
   chatMessages: ChatMessage[];
+  schemaAwarenessData: SchemaAwarenessData;
 }) {
   // Create the AI Agent toolkit with Anthropic Messages adapter
   const toolkit = new AiAgentToolkit({
     adapter: anthropicMessagesAdapter,
+    schemaAwarenessData: options.schemaAwarenessData,
   });
 
   // Create the chat messages formatter

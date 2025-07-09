@@ -5,9 +5,10 @@ import { serverSideToolsVercelAiSdkService } from "@/src/services/server-side-to
 import App from "@/src/view/server-side-tools/common";
 
 const provider = new AiAgentProvider({
-  resolver: async ({ chatMessages }) => {
+  resolver: async ({ chatMessages, schemaAwarenessData }) => {
     const response = await serverSideToolsVercelAiSdkService({
       chatMessages,
+      schemaAwarenessData
     });
     return response;
   },

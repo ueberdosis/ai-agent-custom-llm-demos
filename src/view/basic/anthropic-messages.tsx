@@ -5,8 +5,8 @@ import { basicAnthropicMessagesService } from "@/src/services/basic/anthropic-me
 import App from "@/src/view/basic/common";
 
 const provider = new AiAgentProvider({
-  resolver: async ({ chatMessages }) => {
-    const response = await basicAnthropicMessagesService({ chatMessages });
+  resolver: async ({ chatMessages, schemaAwarenessData }) => {
+    const response = await basicAnthropicMessagesService({ chatMessages, schemaAwarenessData });
     return response;
   },
 });

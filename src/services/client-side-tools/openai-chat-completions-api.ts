@@ -6,16 +6,21 @@ import {
   ChatMessagesFormatter,
   toolsStarterKit,
 } from "@tiptap-pro/extension-ai-agent-server";
-import { ChatMessage } from "@tiptap-pro/extension-ai-agent";
+import {
+  ChatMessage,
+  SchemaAwarenessData,
+} from "@tiptap-pro/extension-ai-agent";
 import OpenAI from "openai";
 import { systemPrompt } from "@/src/services/common/system-prompt";
 import { replaceAllTool } from "./common/replace-all-tool";
 export async function clientSideToolsOpenaiChatCompletionsApiService(options: {
   chatMessages: ChatMessage[];
+  schemaAwarenessData: SchemaAwarenessData;
 }) {
   // Create the AI Agent toolkit with OpenAI Chat Completions adapter and custom tools
   const toolkit = new AiAgentToolkit({
     adapter: openaiChatCompletionsAdapter,
+    schemaAwarenessData: options.schemaAwarenessData,
     // Add a custom tool to the list of client-side tools
     tools: [...toolsStarterKit(), replaceAllTool()],
   });

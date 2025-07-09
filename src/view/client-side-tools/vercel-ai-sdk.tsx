@@ -9,8 +9,11 @@ import App from "@/src/view/client-side-tools/common";
 import { replaceAllToolHandler } from "@/src/view/client-side-tools/common/replace-all-tool-handler.js";
 
 const provider = new AiAgentProvider({
-  resolver: async ({ chatMessages }) => {
-    const response = await clientSideToolsVercelAiSdkService({ chatMessages });
+  resolver: async ({ chatMessages, schemaAwarenessData }) => {
+    const response = await clientSideToolsVercelAiSdkService({
+      chatMessages,
+      schemaAwarenessData,
+    });
     return response;
   },
   toolHandlers: [...toolHandlersStarterKit(), replaceAllToolHandler()],
