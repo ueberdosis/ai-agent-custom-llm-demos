@@ -1,5 +1,6 @@
 import { z } from "zod";
 import {
+  AiAgentToolHandler,
   ToolCallError,
   invalidArgumentsResponseFormatter,
 } from "@tiptap-pro/extension-ai-agent";
@@ -11,11 +12,11 @@ const replaceToolSchema = z.object({
 });
 
 // Custom replace tool handler for client-side
-export const replaceAllToolHandler = () => ({
+export const replaceAllToolHandler = (): AiAgentToolHandler => ({
   // Unique identifier for the tool
   name: "replace_all",
   modifiesEditor: true,
-  handleToolCall: ({ editor, toolCall }) => {
+  handleToolCall: ({ toolCall, html, setHtml }) => {
     // Validate the arguments
     const result = replaceToolSchema.safeParse(toolCall.arguments);
     if (!result.success) {
@@ -25,20 +26,17 @@ export const replaceAllToolHandler = () => ({
     const args = result.data;
 
     try {
-      // Get the current HTML content
-      const html = editor.getHTML();
-
       // Replace all occurrences of the find text with the replace text
       const replacedHtml = html.replaceAll(args.find, args.replace);
 
       // Set the new content in the editor
-      editor.commands.setContent(replacedHtml);
+      setHtml(replacedHtml);
 
       // Return a success message
       return `Successfully replaced all occurrences of "${args.find}" with "${args.replace}".`;
     } catch (error) {
       console.error("Error in replace tool handler:", error);
-      throw new ToolCallError(`Failed to replace text: ${error.message}`);
+      throw new ToolCallError(`Failed to replace text`);
     }
   },
 });

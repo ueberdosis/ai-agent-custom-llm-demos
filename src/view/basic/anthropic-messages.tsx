@@ -9,6 +9,9 @@ const provider = new AiAgentProvider({
     const response = await basicAnthropicMessagesService({ chatMessages, schemaAwarenessData });
     return response;
   },
+  reviewOptions: {
+    extension: "aiChanges",
+  }
 });
 
 export default function BasicAnthropicMessagesView() {

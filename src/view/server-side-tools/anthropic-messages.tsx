@@ -12,6 +12,9 @@ const provider = new AiAgentProvider({
     });
     return response;
   },
+  reviewOptions: {
+    extension: "aiChanges",
+  },
 });
 
 export default function ServerSideToolsAnthropicMessagesView() {

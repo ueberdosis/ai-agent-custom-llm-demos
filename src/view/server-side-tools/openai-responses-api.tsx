@@ -8,9 +8,12 @@ const provider = new AiAgentProvider({
   resolver: async ({ chatMessages, schemaAwarenessData }) => {
     const response = await serverSideToolsOpenaiResponsesApiService({
       chatMessages,
-      schemaAwarenessData
+      schemaAwarenessData,
     });
     return response;
+  },
+  reviewOptions: {
+    extension: "aiChanges",
   },
 });
 
