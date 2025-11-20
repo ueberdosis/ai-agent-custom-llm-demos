@@ -1,6 +1,8 @@
 # AI Agent Custom LLM Demos
 
-A comprehensive Next.js project showcasing how to integrate the [Tiptap AI Agent extension](https://tiptap.dev/docs/content-ai/capabilities/agent/overview) with a custom backend and AI model provider. This repository contains **12 complete demos** demonstrating different integration patterns and capabilities. It follows the [Custom LLM Integration guides](https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms) available in our docs.
+> **⚠️ Note: The AI Agent extension is deprecated and developers should migrate to the AI Toolkit [https://tiptap.dev/product/ai-toolkit](https://tiptap.dev/product/ai-toolkit).**
+
+A comprehensive Next.js project showcasing how to integrate the [Tiptap AI Agent extension](https://tiptap.dev/docs/content-ai/capabilities/agent/overview) with a custom backend and AI model providers.
 
 ## 🚀 Quick Start
 
@@ -12,7 +14,7 @@ npx degit https://github.com/ueberdosis/ai-agent-custom-llm-demos
 
 ### 2. Authenticate to the Tiptap Private Registry
 
-This project contains Tiptap Pro extensions that are published in Tiptap’s private npm registry. To install them, you need to configure your `.npmrc` file with the necessary authentication details. Follow the [private registry guide](https://tiptap.dev/docs/guides/pro-extensions) to set it up.
+This project contains Tiptap Pro extensions that are published in Tiptap’s private npm registry. To install them, you need to configure your `.npmrc` file with the necessary authentication details.
 
 ### 3. Installation
 
@@ -162,7 +164,7 @@ These demos show how to implement custom client-side tools that interact with th
 
 #### 🛠️ Featured Tool: Replace Tool
 
-The replace tool allows users to ask the AI to replace all occurrences of a word or phrase in the document. Try asking: _"Replace all instances of 'company' with 'organization'"_
+The replace tool allows users to ask the AI to replace all occurrences of a word or phrase in the document. Try asking: _"Replace all instances of 'company' with 'organization'"
 
 ### Server-Side Tools Demos
 
@@ -190,7 +192,7 @@ These demos demonstrate server-side tools that fetch external data:
 
 #### 🌤️ Featured Tool: Weather Tool
 
-The weather tool provides dummy weather data for various cities. Try asking: _"What's the weather like in Tokyo?"_
+The weather tool provides dummy weather data for various cities. Try asking: _"What's the weather like in Tokyo?"
 
 ## 🔧 Key Implementation Details
 
